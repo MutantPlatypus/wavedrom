@@ -1,0 +1,27 @@
+{ "signal": [
+  { "name": "0",   "wave": "lh.....", "node": ".a", "phase":0},
+  { "name": "0.1", "wave": "lh.....", "node": ".b", "phase":-0.1},
+  { "name": "0.2", "wave": "lh.....", "node": ".c", "phase":-0.2},
+  { "name": "0.3", "wave": "lh.....", "node": ".𝜃", "phase":-0.3},
+  { "name": "0.4", "wave": "lh.....", "node": ".𝜣", "phase":-0.4},
+  { "name": "0.5", "wave": "lh.....", "node": ".f", "phase":-0.5},
+  { "name": "0.6", "wave": "lh.....", "node": ".G", "phase":-0.6},
+  { "name": "0.7", "wave": "lh.....", "node": ".H", "phase":-0.7},
+  { "name": "0.8", "wave": "lh.....", "node": ".ǈ", "phase":-0.8},
+  { "name": "0.9", "wave": "lh.....", "node": ".J", "phase":-0.9},
+  { "name": "5",   "wave": "lh.....", "node": ".k", "phase":-5}
+  ],
+  "edge": [
+    "a-b",
+    "b-c",
+    "c-𝜃",
+    "𝜃-𝜣",
+    "𝜣-f",
+    "f-G",
+    "G-H",
+    "H-ǈ",
+    "ǈ-J",
+    "J-k"
+  ],
+  "config": {"hiddenEvent": "c𝜃𝜣fǈ", "hideAllEvents":true}
+}
