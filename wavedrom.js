@@ -643,6 +643,7 @@ var lane = {
     xlabel : 6,     // tmptextlabel.x - xg;
     xmax   : 1,
     scale  : 1,
+    hiddenEvent : '',
     head   : {},
     foot   : {}
 };
@@ -676,6 +677,10 @@ function parseConfig (source, lane) {
     lane.yh0 = 0;
     lane.yh1 = 0;
     lane.head = source.head;
+
+    if (source && source.config && source.config.hiddenEvent) {
+        lane.hiddenEvent = source.config.hiddenEvent;
+    }
 
     lane.xmin_cfg = 0;
     lane.xmax_cfg = 1e12; // essentially infinity
@@ -1034,7 +1039,7 @@ function renderArcs (source, index, top, lane) {
             }
         }
         for (k in Events) {
-            if (k === k.toLowerCase()) {
+            if (k === k.toLowerCase() && !lane.hiddenEvent.includes(k)) {
                 if (Events[k].x > 0) {
                     res = res.concat([renderLabel({x: Events[k].x, y: Events[k].y}, k + '')]);
                 }

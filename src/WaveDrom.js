@@ -23,6 +23,7 @@ lane = {
     xlabel : 6,     // tmptextlabel.x - xg;
     xmax   : 1,
     scale  : 1,
+    hiddenEvent: '',
     head   : {},
     foot   : {}
 };
@@ -705,7 +706,7 @@ function renderArcs (root, source, index, top) {
             }
         }
         for (k in Events) {
-            if (k === k.toLowerCase()) {
+            if (k === k.toLowerCase() && !lane.hiddenEvent.includes(k)) {
                 if (Events[k].x > 0) {
                     underlabel = parse([
                         'rect',
@@ -755,6 +756,9 @@ function parseConfig (source) {
             }
             lane.hscale = hscale;
         }
+    }
+    if (source && source.config && source.config.hiddenEvent) {
+        lane.hiddenEvent = source.config.hiddenEvent;
     }
     lane.yh0 = 0;
     lane.yh1 = 0;
